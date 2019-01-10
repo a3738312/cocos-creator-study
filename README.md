@@ -11,3 +11,5 @@ ccc的editbox就算是节点的active设置成false也会有效，且对于不�
 ccc的editbox的在IOS上开启Stay On Top可能会导致点击无反应
 
 ccc搭建安卓原生环境的时候要注意：ccc安装目录和sdk、ndk、ant的路径都不能有中文和空格
+
+ccc项目文件夹的名字不能太长，包括上级文件夹，否则会导致安卓调试模式编译出现问题，是因为Windows系统中路径超过一定字节会导致生成文件失败，从而出现问题
