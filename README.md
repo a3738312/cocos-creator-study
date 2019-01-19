@@ -14,5 +14,5 @@ ccc搭建安卓原生环境的时候要注意：ccc安装目录和sdk、ndk、an
 
 ccc编译安卓原生的时候报错
 Execution failed for task ':libcocos2dx:verifyReleaseResources'.
-> com.android.ide.common.process.ProcessException: Failed to execute aapt
+> com.android.ide.common.process.ProcessException: Failed to execute aapt\n
 可能是因为项目路径太深
