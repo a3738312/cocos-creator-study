@@ -6,7 +6,6 @@
 * ccc的editbox就算是节点的active设置成false也会有效，且对于不同机型 enabled=false 可能会无效  
 * ccc的editbox的在IOS上开启Stay On Top可能会导致点击无反应  
 * ccc搭建安卓原生环境的时候要注意：ccc安装目录和sdk、ndk、ant的路径都不能有中文和空格  
-* ccc编译安卓原生的时候报错  
+* ccc编译安卓原生的时候报错可能是因为项目路径太深  
 >Execution failed for task ':libcocos2dx:verifyReleaseResources'.  
- com.android.ide.common.process.ProcessException: Failed to execute aapt<  
-可能是因为项目路径太深
+ com.android.ide.common.process.ProcessException: Failed to execute aapt  
