@@ -12,4 +12,7 @@ ccc的editbox的在IOS上开启Stay On Top可能会导致点击无反应
 
 ccc搭建安卓原生环境的时候要注意：ccc安装目录和sdk、ndk、ant的路径都不能有中文和空格
 
-ccc安卓编译的时候报NDK = null是因为项目路径的名字不能太长，包括上级文件夹，是因为Windows系统中路径超过一定字节会导致生成文件失败，从而出现问题
+ccc编译安卓原生的时候报错
+Execution failed for task ':libcocos2dx:verifyReleaseResources'.
+> com.android.ide.common.process.ProcessException: Failed to execute aapt
+可能是因为项目路径太深
