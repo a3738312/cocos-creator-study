@@ -7,4 +7,6 @@
 * ccc的editbox的在IOS上开启Stay On Top可能会导致点击无反应  
 * ccc搭建安卓原生环境的时候要注意：ccc安装目录和sdk、ndk、ant的路径都不能有中文和空格  
 * ccc编译安卓原生的时候报错可能是因为项目路径太深  
-> fatal error: opening dependency file 项目所在路径/hello/test/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/armeabi-v7a/objs/cocos2dx_static/scripting/js-bindings/jswrapper/v8/debugger/inspector_socket_server.o.d: No such file or directory  
+> fatal error: opening dependency file 项目所在路径/hello/test/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/armeabi-v7a/objs/cocos2dx_static/scripting/js-bindings/jswrapper/v8/debugger/inspector_socket_server.o.d: No such file or directory  ··
+* ccc调用java代码，java方法需要写静态
+* cccjava调用js代码，需要js代码是全局可用的:  window.login();//js  window['login']=()=>{}
