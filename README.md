@@ -9,7 +9,8 @@
 * ccc编译安卓原生的时候报错可能是因为项目路径太深  
 > fatal error: opening dependency file 项目所在路径/hello/test/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/armeabi-v7a/objs/cocos2dx_static/scripting/js-bindings/jswrapper/v8/debugger/inspector_socket_server.o.d: No such file or directory  ··
 * ccc调用java代码，java方法需要写静态，在调用jsb.reflection.callStaticMethod(类完整路径,方法名,方法签名,参数...);的时候  
-* 方法签名必须和被调用方法保持一致，比如 ()V 表示没有参数也没有返回值，(I)V有int类型参数没有返回值 (I)I有int参数也有int返回值;没有对应会找不到方法
+* 方法签名必须和被调用方法保持一致，比如 ()V 表示没有参数也没有返回值，(I)V有int类型参数没有返回值 (I)I有int参数也有int返回值;没有对应会找不到方法  
+* 特别注意String的方法签名 Ljava/lang/String; 后面的分号一定要加上去
 * cccjava调用js代码，需要js代码是全局可用的:  
 window.login();//js  
 window['login']=()=>{}
