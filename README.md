@@ -14,3 +14,18 @@
 * cccjava调用js代码，需要js代码是全局可用的:  
 window.login();//js  
 window['login']=()=>{}
+
+
+
+#原生
+通过使用PowerManager里面的WakeLock可以使游戏不息屏
+
+        private static PowerManager.WakeLock wakeLock;
+
+        PowerManager _powerMgr = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        wakeLock = _powerMgr.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,TAG);
+        wakeLock.acquire();
+        
+需要在AndroidManifest.xml添加权限
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
