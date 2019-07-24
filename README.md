@@ -18,12 +18,13 @@ window['login']=()=>{}
 
 
 #原生
+https://blog.csdn.net/qq_32115439/article/details/80169222
 通过使用PowerManager里面的WakeLock可以使游戏不息屏
 
         private static PowerManager.WakeLock wakeLock;
 
         PowerManager _powerMgr = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        wakeLock = _powerMgr.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,TAG);
+        wakeLock = _powerMgr.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK,TAG);
         wakeLock.acquire();
         
 需要在AndroidManifest.xml添加权限
