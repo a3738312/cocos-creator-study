@@ -21,3 +21,4 @@ window['login']=()=>{}
 
 * 通过使用PowerManager里面的WakeLock可以使游戏不息屏
 * https://blog.csdn.net/qq_32115439/article/details/80169222
+* 接入一些需要设置某些值的SDK，要判断SDK和游戏都初始化完毕了再做后面的事情
