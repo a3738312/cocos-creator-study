@@ -22,3 +22,8 @@ window['login']=()=>{}
 * 通过使用PowerManager里面的WakeLock可以使游戏不息屏
 * https://blog.csdn.net/qq_32115439/article/details/80169222
 * 接入一些需要设置某些值的SDK，要判断SDK和游戏都初始化完毕了再做后面的事情
+
+# QQ小游戏
+* 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
+* ccc在QQ小游戏里获取环境是安卓，要加判断
+* ccc发布QQ小游戏流程：发布微信小游戏，用VS Code打开微信小游戏文件夹，全局搜索;wx.'替换成'qq.'；saveFile前需改成fs(和微信不一样)
