@@ -22,6 +22,8 @@ window['login']=()=>{}
 * 通过使用PowerManager里面的WakeLock可以使游戏不息屏
 * https://blog.csdn.net/qq_32115439/article/details/80169222
 * 接入一些需要设置某些值的SDK，要判断SDK和游戏都初始化完毕了再做后面的事情
+* Google play servers 接入的时候要注意创建OAth2.0客户端，一个调试客户端，一个正式客户端
+* 安卓Facebook分享需要base64图片或bitmap，可以在JS里处理图片(截图、拼图等)然后调用jsb.saveImageData()保存在本地，安卓根据路径读取图片直接以bitmap传入即可(会比较块)
 
 # QQ小游戏
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
