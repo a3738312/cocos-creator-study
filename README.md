@@ -24,6 +24,8 @@ window['login']=()=>{}
 * 接入一些需要设置某些值的SDK，要判断SDK和游戏都初始化完毕了再做后面的事情
 * Google play servers 接入的时候要注意创建OAth2.0客户端，一个调试客户端，一个正式客户端
 * 安卓Facebook分享需要base64图片或bitmap，可以在JS里处理图片(截图、拼图等)然后调用jsb.saveImageData()保存在本地，安卓根据路径读取图片直接以bitmap传入即可(会比较块)
+* 或许会用到的东西：
+  * 使用外部存储：(https://www.cnblogs.com/zanzg/p/9129375.html)(https://blog.csdn.net/csdn_aiyang/article/details/80665185)(https://docs.cocos.com/creator/manual/zh/advanced-topics/java-reflection.html?h=java)
 
 # QQ小游戏
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
