@@ -25,7 +25,7 @@ window['login']=()=>{}
 * Google play servers 接入的时候要注意创建OAth2.0客户端，一个调试客户端，一个正式客户端
 * 安卓Facebook分享需要base64图片或bitmap，可以在JS里处理图片(截图、拼图等)然后调用jsb.saveImageData()保存在本地，安卓根据路径读取图片直接以bitmap传入即可(会比较块)
 * Cocos Creator 生成的配置文件里，主Acticity的任务关联是空字符串，会导致其他的Actictiy独立于App显示在最近任务中
->android:taskAffinity: 
+>android:taskAffinity:  
 与 Activity 有着相似性的任务。从概念上讲，具有同一相似性的 Activity 归属同一任务（从用户的角度来看，则是归属同一“应用”）。任务的相似性由其根 Activity 的相似性确定。
 相似性确定两点内容 — Activity 更改父项后的任务（请参阅 allowTaskReparenting 属性），以及通过 FLAG_ACTIVITY_NEW_TASK 标记启动 Activity 时，用于容纳该 Activity 的任务。
 
