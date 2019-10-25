@@ -32,7 +32,7 @@ window['login']=()=>{}
 默认情况下，应用中的所有 Activity 都具有同一相似性。您可以设置该属性，以不同方式将其分组，甚至可以在同一任务内放置不同应用中定义的 Activity。如要指定 Activity 与任何任务均无相似性，请将其设置为空字符串。
 
 如果未设置该属性，则 Activity 会继承为应用设置的相似性（请参阅 <application> 元素的 taskAffinity 属性）。应用默认相似性的名称为 <manifest> 元素所设置的软件包名称。
- 
+* 安卓查询最近系统发的广播：adb shell dumpsys |grep BroadcastRecord
  
 
 * 或许会用到的东西：
