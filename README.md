@@ -33,6 +33,7 @@ window['login']=()=>{}
 
 如果未设置该属性，则 Activity 会继承为应用设置的相似性（请参阅 <application> 元素的 taskAffinity 属性）。应用默认相似性的名称为 <manifest> 元素所设置的软件包名称。
 * 安卓查询最近系统发的广播：adb shell dumpsys |grep BroadcastRecord
+* 谷歌的广告归因需要将firebase接入到项目中
  
 
 * 或许会用到的东西：
