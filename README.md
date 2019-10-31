@@ -14,6 +14,7 @@
 * cccjava调用js代码，需要js代码是全局可用的:  
 window.login();//js  
 window['login']=()=>{}
+* ts和js混用的时候要注意依赖JS脚本的时候路径是否正确，不正确可能会导致发布后的包报错
 
 
 
