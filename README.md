@@ -8,6 +8,7 @@
 * ccc搭建安卓原生环境的时候要注意：ccc安装目录和sdk、ndk、ant的路径都不能有中文和空格  
 * ccc编译安卓原生的时候报错可能是因为项目路径太深  
 > fatal error: opening dependency file 项目所在路径/hello/test/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/armeabi-v7a/objs/cocos2dx_static/scripting/js-bindings/jswrapper/v8/debugger/inspector_socket_server.o.d: No such file or directory  ··
+
 * ccc调用java代码，java方法需要写静态，在调用jsb.reflection.callStaticMethod(类完整路径,方法名,方法签名,参数...);的时候  
 * 方法签名必须和被调用方法保持一致，比如 ()V 表示没有参数也没有返回值，(I)V有int类型参数没有返回值 (I)I有int参数也有int返回值;没有对应会找不到方法  
 * 特别注意String的方法签名 Ljava/lang/String; 后面的分号一定要加上去
@@ -21,12 +22,14 @@ window['login']=()=>{}
 # 原生
 
 * 通过使用PowerManager里面的WakeLock可以使游戏不息屏
-* https://blog.csdn.net/qq_32115439/article/details/80169222
+> https://blog.csdn.net/qq_32115439/article/details/80169222
+
+
 * 接入一些需要设置某些值的SDK，要判断SDK和游戏都初始化完毕了再做后面的事情
 * Google play servers 接入的时候要注意创建OAth2.0客户端，一个调试客户端，一个正式客户端
 * 安卓Facebook分享需要base64图片或bitmap，可以在JS里处理图片(截图、拼图等)然后调用jsb.saveImageData()保存在本地，安卓根据路径读取图片直接以bitmap传入即可(会比较块)
 * Cocos Creator 生成的配置文件里，主Acticity的任务关联是空字符串，会导致其他的Actictiy独立于App显示在最近任务中
->android:taskAffinity:  
+> android:taskAffinity:  
 与 Activity 有着相似性的任务。从概念上讲，具有同一相似性的 Activity 归属同一任务（从用户的角度来看，则是归属同一“应用”）。任务的相似性由其根 Activity 的相似性确定。  
 相似性确定两点内容 — Activity 更改父项后的任务（请参阅 allowTaskReparenting 属性），以及通过 FLAG_ACTIVITY_NEW_TASK 标记启动 Activity 时，用于容纳该 Activity 的任务。
 
