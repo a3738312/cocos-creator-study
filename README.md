@@ -52,3 +52,4 @@ window['login']=()=>{}
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
 * ccc在QQ小游戏里获取环境是安卓，要加判断
 * ccc发布QQ小游戏流程：发布微信小游戏，用VS Code打开微信小游戏文件夹，全局搜索'wx.'替换成'qq.'saveFile前需改成fs(和微信不一样)
+* qq小程序开发者工具0.1.28里cocos creator构建的项目无法正常运行
