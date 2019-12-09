@@ -43,11 +43,6 @@ window['login']=()=>{}
     > [关于获得安卓外部存储读写权限](https://www.cnblogs.com/zanzg/p/9129375.html)  
         [Android 文件外/内部存储的获取各种存储目录路径](https://blog.csdn.net/csdn_aiyang/article/details/80665185)  
         [如何在 Android 平台上使用 JavaScript 直接调用 Java 方法](https://docs.cocos.com/creator/manual/zh/advanced-topics/java-reflection.html?h=java)
-  
-  
-  
- 
-
 # QQ小游戏
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
 * ccc在QQ小游戏里获取环境是安卓，要加判断
