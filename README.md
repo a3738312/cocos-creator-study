@@ -47,8 +47,8 @@ window['login']=()=>{}//ts
         [Android 文件外/内部存储的获取各种存储目录路径](https://blog.csdn.net/csdn_aiyang/article/details/80665185)  
         [如何在 Android 平台上使用 JavaScript 直接调用 Java 方法](https://docs.cocos.com/creator/manual/zh/advanced-topics/java-reflection.html?h=java)
 * 接入Facebook Banner广告可以新建一个Activity然后把AdView添加到该Activity上
-* 谷歌广告归因测试：
-    >adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n "包名/Receiver完整地址" --es "referrer" "utm_source%3DtestSource%26utm_medium%3DtestMedium%26utm_term%3DtestTerm%26utm_content%3DtestContent%26utm_campaign%3DtestCampaign"
+* 谷歌广告归因测试： 
+    >`adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n "包名/Receiver完整地址" --es "referrer" "utm_source%3DtestSource%26utm_medium%3DtestMedium%26utm_term%3DtestTerm%26utm_content%3DtestContent%26utm_campaign%3DtestCampaign"`
 # QQ小游戏
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
 * ccc在QQ小游戏里获取环境是安卓，要加判断
