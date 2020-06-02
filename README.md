@@ -48,55 +48,57 @@
         [CocosCreator 如何在 Android 平台上使用 JavaScript 直接调用 Java 方法](https://docs.cocos.com/creator/manual/zh/advanced-topics/java-reflection.html?h=java)
 * 接入Facebook Banner广告可以新建一个Activity然后把AdView添加到该Activity上
 * 谷歌广告归因测试： 
-    >`adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n "包名/Receiver完整地址" --es "referrer" "utm_source%3DtestSource%26utm_medium%3DtestMedium%26utm_term%3DtestTerm%26utm_content%3DtestContent%26utm_campaign%3DtestCampaign"`
+    ```
+    adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n "包名/Receiver完整地址" --es "referrer" "utm_source%3DtestSource%26utm_medium%3DtestMedium%26utm_term%3DtestTerm%26utm_content%3DtestContent%26utm_campaign%3DtestCampaign"
+    ```
 * 安卓JAVA和webview内部js交互
-    >    ```Java
-    >   //java部分
-    >   //给webview注册监听接收js调用
-    >   webView.addJavascriptInterface(new gameViewAPI(), "gameViewAPI");
-    >   //接受js调用的方法
-    >    static class gameViewAPI {
-    >       @JavascriptInterface
-    >       public String sendMsgToJava(final String __msg) {
-    >           //处理数据
-    >           return "";
-    >       }
-    >   }
-    >
-    >   public static String sendMsgToGame(final String __msg) {
-    >       if (webView != null && activity != null) {
-    >           //发送消息到游戏必须在ui线程调用
-    >           activity.runOnUiThread(new Runnable() {
-    >               @Override
-    >               public void run() {
-    >                   //发送消息到游戏
-    >                   //window.revMsgFromLobby在js中全局定义
-    >                   webView.loadUrl(
-    >                       "javascript:window.revMsgToJava(" + __msg + ")");
-    >               }
-    >           });
-    >       } else {
-    >            Log.d(TAG, "webview or activity is null");
-    >       }
-    >       return "";
-    >   }
-    >    ```
-    >   ```javascript
-    >   //js部分
-    >   //调用java
-    >   public sendMsgToJava(__data:string) {
-    >       let __msg = JSON.stringify(__data);
-    >       if (window.gameViewAPI && window.gameViewAPI.sendMsgToJava) {
-    >           LogComponent.Log("sendMsgToJava: " + __msg);
-    >           window.gameViewAPI.sendMsgToJava(__msg);
-    >       }
-    >   }
-    >   
-    >   //接收java调用
-    >   window["revMsgToJava"] = (data: string) => {
-    >        //处理数据
-    >   }
-    >   ```
+     ```Java
+    //java部分
+    //给webview注册监听接收js调用
+    webView.addJavascriptInterface(new gameViewAPI(), "gameViewAPI");
+    //接受js调用的方法
+     static class gameViewAPI {
+        @JavascriptInterface
+        public String sendMsgToJava(final String __msg) {
+            //处理数据
+            return "";
+        }
+    }
+   
+    public static String sendMsgToGame(final String __msg) {
+        if (webView != null && activity != null) {
+            //发送消息到游戏必须在ui线程调用
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    //发送消息到游戏
+                    //window.revMsgFromLobby在js中全局定义
+                    webView.loadUrl(
+                        "javascript:window.revMsgToJava(" + __msg + ")");
+                }
+            });
+        } else {
+             Log.d(TAG, "webview or activity is null");
+        }
+        return "";
+    }
+     ```
+    ```javascript
+    //js部分
+    //调用java
+    public sendMsgToJava(__data:string) {
+        let __msg = JSON.stringify(__data);
+        if (window.gameViewAPI && window.gameViewAPI.sendMsgToJava) {
+            LogComponent.Log("sendMsgToJava: " + __msg);
+            window.gameViewAPI.sendMsgToJava(__msg);
+        }
+    }
+    
+    //接收java调用
+    window["revMsgToJava"] = (data: string) => {
+         //处理数据
+    }
+    ```
 # QQ小游戏
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
 * ccc在QQ小游戏里获取环境是安卓，要加判断
