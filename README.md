@@ -15,12 +15,6 @@
 * CocosCreator中Java和JS互相调用
     >[如何在 Android 平台上使用 JavaScript 直接调用 Java 方法](https://docs.cocos.com/creator/manual/zh/advanced-topics/java-reflection.html?h=java)
     * 特别注意String的方法签名 Ljava/lang/String; 后面的分号一定要加上去
-    * CocosCreatorjava调用js代码，需要js代码是全局可用的:  
-        ```javascript
-        window.login = function(){}//js
-        
-        window['login'] = () => {}//ts
-        ```
 * ts和js混用的时候要注意依赖JS脚本的时候路径是否正确，不正确可能会导致发布后的包报错
 * 在资源管理器里删除资源或者手动移动资源后如果有报错，把`library、local、temp`目录删掉重新打开
 * 两个ts文件互相引用编辑器会报错
