@@ -25,6 +25,7 @@
 * ts和js混用的时候要注意依赖JS脚本的时候路径是否正确，不正确可能会导致发布后的包报错
 * 在资源管理器里删除资源或者手动移动资源后如果有报错，把`library、local、temp`目录删掉重新打开
 * 两个ts文件互相引用编辑器会报错
+* git同步场景可能会因为冲突导致无法解决的报错，这时可以放弃较少修改的部分，同步完后重新修改场景再提交
 # 原生
 * 通过使用PowerManager里面的WakeLock可以使游戏不息屏
     > [Android-WakeLock(唤醒锁与CPU休眠/屏幕常亮)](https://blog.csdn.net/qq_32115439/article/details/80169222)
@@ -49,7 +50,7 @@
 * 接入Facebook Banner广告可以新建一个Activity然后把AdView添加到该Activity上
 * 谷歌广告归因测试： 
     >`adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n "包名/Receiver完整地址" --es "referrer" "utm_source%3DtestSource%26utm_medium%3DtestMedium%26utm_term%3DtestTerm%26utm_content%3DtestContent%26utm_campaign%3DtestCampaign"`
-* 安卓原生和webview内部js交互
+* 安卓JAVA和webview内部js交互
     >    ```Java
     >   //java部分
     >   //给webview注册监听接收js调用
@@ -101,7 +102,11 @@
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
 * ccc在QQ小游戏里获取环境是安卓，要加判断
 * ccc发布QQ小游戏流程：发布微信小游戏，用VS Code打开微信小游戏文件夹，全局搜索'wx.'替换成'qq.'  saveFile前需改成fs(和微信不一样)
-* qq小程序开发者工具需保持最新
+* qq小程序开发者工具部分版本打开工程会直接报错
+# 字节跳动小游戏
+* CocosCreator直接发布微信小游戏即可
+# 小程序SDK接入
+* main.js如果开了md5的话不能设置模板，所以有引用js的话每次出包都要记得加上
 # 工作注意
 * 遇事不决先保存
 * 一个需求完成后，先提交一次再继续做别的需求
