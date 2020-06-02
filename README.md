@@ -52,8 +52,8 @@
     adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n "包名/Receiver完整地址" --es "referrer" "utm_source%3DtestSource%26utm_medium%3DtestMedium%26utm_term%3DtestTerm%26utm_content%3DtestContent%26utm_campaign%3DtestCampaign"
     ```
 * 安卓JAVA和webview内部js交互
+    * java部分
      ```Java
-    //java部分
     //给webview注册监听接收js调用
     webView.addJavascriptInterface(new gameViewAPI(), "gameViewAPI");
     //接受js调用的方法
@@ -83,8 +83,8 @@
         return "";
     }
      ```
-    ```javascript
-    //ts部分
+     * ts部分
+    ```typescript
     //调用java
     public sendMsgToJava(__data:string) {
         let __msg = JSON.stringify(__data);
