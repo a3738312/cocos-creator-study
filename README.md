@@ -16,12 +16,11 @@
 * 方法签名必须和被调用方法保持一致，比如 ()V 表示没有参数也没有返回值，(I)V有int类型参数没有返回值 (I)I有int参数也有int返回值;没有对应会找不到方法
 * 特别注意String的方法签名 Ljava/lang/String; 后面的分号一定要加上去
 * cccjava调用js代码，需要js代码是全局可用的:  
-    >```javascript
-    >window.login = function(){}//js
-    >```
-    >```typescript
-    >window['login'] = () => {}//ts
-    >```
+    ```javascript
+    window.login = function(){}//js
+    
+    window['login'] = () => {}//ts
+    ```
 * ts和js混用的时候要注意依赖JS脚本的时候路径是否正确，不正确可能会导致发布后的包报错
 * 在资源管理器里删除资源或者手动移动资源后如果有报错，把`library、local、temp`目录删掉重新打开
 * 两个ts文件互相引用编辑器会报错
