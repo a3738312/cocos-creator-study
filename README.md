@@ -84,7 +84,7 @@
     }
      ```
     ```javascript
-    //js部分
+    //ts部分
     //调用java
     public sendMsgToJava(__data:string) {
         let __msg = JSON.stringify(__data);
