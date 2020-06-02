@@ -10,7 +10,7 @@
 * CocosCreator编译安卓原生的时候有类似以下报错或找不到文件夹可能是因为项目路径太深  
     ``` 
     fatal error: opening dependency file  
-    项目所在路径/hello/test/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/armeabi-v7a/objs/cocos2dx_static/scripting/js-bindings/jswrapper/v8/debugger/inspector_socket_server.o.d: No such file or directory  ··
+    项目所在路径/build/jsb-link/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/release/obj/local/armeabi-v7a/objs/cocos2dx_static/scripting/js-bindings/jswrapper/v8/debugger/inspector_socket_server.o.d: No such file or directory  ··
     ```
 * CocosCreator中Java和JS互相调用
     >[如何在 Android 平台上使用 JavaScript 直接调用 Java 方法](https://docs.cocos.com/creator/manual/zh/advanced-topics/java-reflection.html?h=java)
