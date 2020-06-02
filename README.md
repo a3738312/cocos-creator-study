@@ -65,7 +65,7 @@
         }
     }
    
-    public static String sendMsgToGame(final String __msg) {
+    public static void sendMsgToGame(final String __msg) {
         if (webView != null && activity != null) {
             //发送消息到游戏必须在ui线程调用
             activity.runOnUiThread(new Runnable() {
@@ -80,7 +80,6 @@
         } else {
              Log.d(TAG, "webview or activity is null");
         }
-        return "";
     }
      ```
      * ts部分
