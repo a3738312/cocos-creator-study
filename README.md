@@ -15,7 +15,7 @@
 * CocosCreator中Java和JS互相调用
     >[如何在 Android 平台上使用 JavaScript 直接调用 Java 方法](https://docs.cocos.com/creator/manual/zh/advanced-topics/java-reflection.html?h=java)
     * 特别注意String的方法签名 Ljava/lang/String; 后面的分号一定要加上去
-* 在TS中引用JS `import js = requrie(./js)`
+* 在TS中引用JS `import js = requrie(./js)`//无代码提示
 * 在JS中引用TS `import ts from "./ts";`
 * 在资源管理器里删除资源或者手动移动资源后如果有报错，把`library、local、temp`目录删掉重新打开
 * 两个ts文件互相引用编辑器会报错
