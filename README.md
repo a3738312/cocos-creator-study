@@ -87,7 +87,7 @@
         }
     }
     
-    //接收java调用
+    //接收java调用,要在全局的地方定义
     window["revMsgToJava"] = (data: string) => {
          //处理数据
     }
