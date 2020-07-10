@@ -42,7 +42,6 @@
     adb shell am broadcast -a com.android.vending.INSTALL_REFERRER -n "包名/Receiver完整地址" --es "referrer" "utm_source%3DtestSource%26utm_medium%3DtestMedium%26utm_term%3DtestTerm%26utm_content%3DtestContent%26utm_campaign%3DtestCampaign"
     ```
 * 安卓JAVA和webview内部js交互
-    * java部分
      ```Java
     //给webview注册监听接收js调用
     webView.addJavascriptInterface(new gameViewAPI(), "gameViewAPI");
@@ -72,9 +71,8 @@
         }
     }
      ```
-     * ts部分
     ```Typescript
-    //调用java
+    // ts调用java
     public sendMsgToJava(__data:string) {
         let __msg = JSON.stringify(__data);
         if (window.gameViewAPI && window.gameViewAPI.sendMsgToJava) {
@@ -92,9 +90,26 @@
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
 * CocosCreator在QQ小游戏里获取环境是安卓，要加判断
 * CocosCreator发布QQ小游戏流程：发布微信小游戏，用VS Code打开微信小游戏文件夹，全局搜索'wx.'替换成'qq.'  saveFile前需改成fs(和微信不一样)
-* qq小程序开发者工具部分版本打开工程会直接报错
+* qq小程序开发者工具打开工程会报错时更新到最新版即可
 # 字节跳动小游戏
 * CocosCreator直接发布微信小游戏即可
+# OPPO小游戏
+* OPPO小游戏发布需要将录屏和更多游戏按钮去掉，在结算页添加结算页互推
+* 远程音频下载后用本地地址或者直接使用远程地址的音效不能用cocos自己的音频引擎播放，需要使用oppo的`InnerAudioContext`来播放
+    ```typescript
+    //官方示例
+    var audio = qg.createInnerAudioContext()
+    audio.loop = true
+    audio.volume = 0.7
+    audio.autoplay = false
+    var playSound = function() {
+    audio.play()
+    audio.offCanplay(playSound)
+    }
+    audio.onCanplay(playSound)
+    audio.src = 'res/demo.mp3'
+    ```
+* 音频播放在切后台的时候调用暂停音频的话，在切前台的时候有可能音频还会自动播放，但是音频当前状态还是暂停，这种时候可以在且前台先调用`audio.play()`再调用`audio.puase()`来暂停
 # 小程序SDK接入
 * main.js如果开了md5的话不能设置模板，所以有引用js的话每次出包都要记得加上
 # 工作注意
