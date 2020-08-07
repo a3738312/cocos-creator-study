@@ -110,6 +110,15 @@
     audio.src = 'res/demo.mp3'
     ```
 * 音频播放在切后台的时候调用暂停音频的话，在切前台的时候有可能音频还会自动播放，但是音频当前状态还是暂停，这种时候可以在且前台先调用`audio.play()`再调用`audio.puase()`来暂停
+# VIVO小游戏
+* VIVO小游戏的远程音频需同OPPO一样处理
+* VIVO小游戏在游戏里播放`cc.AudioClip`会出现没有声音的问题，需要修改源码：
+    ``` js
+    //调整下 [creator目录]/resource/builtin/vivo-adapter/engien/jsb-audio.js 的 接口 cc.audioEngine.playEffect 为
+    cc.audioEngine.playEffect = function (filePath, loop) {
+        return cc.audioEngine.play(filePath, loop || false, _effect.volume);
+    };
+    ```
 # 小程序SDK接入
 * main.js如果开了md5的话不能设置模板，所以有引用js的话每次出包都要记得加上
 # 工作注意
