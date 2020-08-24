@@ -16,6 +16,7 @@
 * 在资源管理器里删除资源或者手动移动资源后如果有报错，把`library、local、temp`目录删掉重新打开
 * 两个ts文件互相引用编辑器会报错
 * git同步场景可能会因为冲突导致无法解决的报错，这时可以放弃较少修改的部分，同步完后重新修改场景再提交
+* `node._touchListener.setSwallowTouches(false);`可以让去掉点击事件截断，非父子节点也可穿透
 # 原生
 * 通过使用PowerManager里面的WakeLock可以使游戏不息屏
     > [Android-WakeLock(唤醒锁与CPU休眠/屏幕常亮)](https://blog.csdn.net/qq_32115439/article/details/80169222)
