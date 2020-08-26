@@ -17,6 +17,7 @@
 * 两个ts文件互相引用编辑器会报错
 * git同步场景可能会因为冲突导致无法解决的报错，这时可以放弃较少修改的部分，同步完后重新修改场景再提交
 * `node._touchListener.setSwallowTouches(false);`可以让去掉点击事件截断，非父子节点也可穿透
+* CC默认的摄像机是透视模式的，哪怕是2d节点，如果需要用3d节点做倾斜文字，需要将摄像机设置为正交摄像机，不然因为透视会导致每个3d节点显示的角度不一样。
 # 原生
 * 通过使用PowerManager里面的WakeLock可以使游戏不息屏
     > [Android-WakeLock(唤醒锁与CPU休眠/屏幕常亮)](https://blog.csdn.net/qq_32115439/article/details/80169222)
