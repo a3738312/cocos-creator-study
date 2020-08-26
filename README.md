@@ -88,6 +88,7 @@
          //处理数据
     }
     ```
+* [安卓获取设备ID](https://www.jianshu.com/p/671e1da50b33)
 # QQ小游戏
 * 远程加载资源有不支持的文件格式，下载不支持的格式会报错 Download Fielded
 * CocosCreator在QQ小游戏里获取环境是安卓，要加判断
